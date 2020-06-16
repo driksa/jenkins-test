@@ -5,11 +5,11 @@ stage('Clone') {
 }
 
 stage('Build image') {
-    app = docker.build("xavki/nginx")
+    app = docker.build("nginy/nginx")
 }
 
 stage('Test image') {
-    docker.image('xavki/nginx').withRun('-p 80:80') { c ->
+    docker.image('nginy/nginx').withRun('-p 80:80') { c ->
     sh 'docker ps'
     sh 'curl localhost'
      }
